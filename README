@@ -1,3 +1,6 @@
 npm init  -y
 npm install express
 npm install formidable
+
+node index.js (rodar o servidor)
+
