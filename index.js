@@ -7,6 +7,11 @@ const{text }     = require("express")
 const servidor = http.createServer((req, res) =>{
 
     if(req.url == '/envioDeArquivo'){
+        const form = new formidavel.IncomingForm()
+        form.parse(req, (erro, campos, arquivos)=>{
+            const urlAntiga = arquivos.filetoupload[0].filepath
+            const urlNova   = 'C:C:\Users\lucas\Desktop\Vscode\UploadDeArquivos-23-05-2024' + arquivos.filetoupload[0].originalFilename
+        })
 
     }else{
         res.writeHead(200, {"Content-Type": "text/html"})
@@ -18,6 +23,4 @@ const servidor = http.createServer((req, res) =>{
     }
 })
  
-servidor.listen(porta, () =>{
-    console.log("Servidor Rodando na porta 3000")
-})
+servidor.listen(porta, () =>{console.log("Servidor Rodando na porta 3000")})
